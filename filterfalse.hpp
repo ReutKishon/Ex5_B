@@ -2,14 +2,14 @@
 
 namespace itertools
 {
-    template <typename FUNC, typename T>
+    template <typename FUNCTOR, typename CONT>
     class filterfalse
     {
-        const T &container;
-        const FUNC &function;
+        const CONT &container;
+        const FUNCTOR &function;
 
     public:
-        filterfalse(const FUNC &func, const T &con) : function(func), container(con) {}
+        filterfalse(const FUNCTOR &func, const CONT &con) : function(func), container(con) {}
 
         class iterator
         {
@@ -21,6 +21,16 @@ namespace itertools
             {
                 while (iter != filter.container.end() && filter.function(*iter))
                     iter++;
+            }
+
+            iterator &operator=(const iterator &temp_iter)
+            {
+                if (this != &temp_iter)
+                {
+                    this->iter = temp_iter.iter;
+                    this->filter = temp_iter.filter;
+                }
+                return *this;
             }
 
             iterator &operator++()
