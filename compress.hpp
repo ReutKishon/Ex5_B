@@ -37,8 +37,7 @@ namespace itertools{
 
             const iterator operator++(int){
                 iterator temp = *this;
-                ++iter1;
-                ++iter2;
+                ++*this;
                 return temp;
             }
 
