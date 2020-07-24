@@ -29,8 +29,8 @@ namespace itertools
 
         class iterator
         {
-            decltype(container.begin()) iter; // e.g if container is vector then the type is vector::iterator
-            typename CONT::value_type sum;    // return type of elements in the given container
+            decltype(container.begin()) iter;                              // e.g if container is vector then the type is vector::iterator
+            typename std::decay<decltype(*(container.begin()))>::type sum; // return type of elements in the given container
             const accumulate &acc;
 
         public:
