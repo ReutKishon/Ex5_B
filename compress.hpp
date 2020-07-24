@@ -23,7 +23,7 @@ namespace itertools
                 : iter1(it1), iter2(it2), comp(c)
             {
 
-                while (iter2 != comp.container2.end() && *iter2 == false)
+                while (iter2 != comp.bool_container.end() && *iter2 == false)
                 {
                     iter1++;
                     iter2++;
@@ -34,7 +34,7 @@ namespace itertools
             {
                 ++iter1;
                 ++iter2;
-                while (iter2 != comp.container2.end() && *iter2 == false))
+                while (iter2 != comp.bool_container.end() && *iter2 == false))
                     {
                         iter1++;
                         iter2++;
