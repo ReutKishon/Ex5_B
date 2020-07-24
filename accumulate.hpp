@@ -18,7 +18,7 @@ namespace itertools {
 
     template<class T,class FUNC = add>
     class accumulate {
-         const  T& container;
+        const  T& container;
         const FUNC& function;
     public:
 

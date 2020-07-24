@@ -2,10 +2,10 @@
 
 namespace itertools
 {
-    template <typename FUNC, typename CONT>
+    template <typename FUNC, typename T>
     class filterfalse
     {
-        const CONT &container;
+        const T &container;
         const FUNC &function;
 
     public:
